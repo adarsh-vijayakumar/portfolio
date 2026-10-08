@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { Code2, ExternalLink, GraduationCap, Mail, MapPin, Phone, UserRound } from "lucide-react";
+import { Clock3, Code2, ExternalLink, GraduationCap, Mail, MapPin, Phone, UserRound } from "lucide-react";
 import { Github, Linkedin, Medium } from "@/components/BrandIcons";
 import Sidebar from "@/components/Sidebar";
-import { experience, profile, projects, skillGroups } from "@/lib/content";
+import { experience, profile, projects, publications, skillGroups } from "@/lib/content";
 import styles from "./page.module.css";
 
 function SectionHeading({ number, eyebrow, title }: { number: string; eyebrow: string; title: string }) {
@@ -21,7 +21,7 @@ export default function Portfolio() {
           </div>
           <h1 id="home-title">{profile.name}</h1>
           <p className={styles.title}>{profile.title}</p>
-          <p className={styles.heroDescription}>Building reliable systems, from the API to the interface.<br className={styles.desktopBreak} /> Five years of engineering across healthcare and retail.</p>
+          <p className={styles.heroDescription}>Building high-performance backend platforms with Java, Spring Boot & Microservices.<br className={styles.desktopBreak} /> Transforming complex business logic into scalable, reliable system designs.</p>
           <div className={styles.heroActions}><a className={styles.primaryButton} href="#experience">Explore my experience</a><a className={styles.secondaryButton} href="#contact"><Mail size={17} />Get in touch</a></div>
           <div className={styles.metrics} aria-label="Career highlights from resume">
             <div><strong>5 years</strong><span>US-based experience</span></div>
@@ -73,18 +73,37 @@ export default function Portfolio() {
           ) : <div className={styles.projectPlaceholder}><span className={styles.placeholderIcon}><Code2 size={26} strokeWidth={1.4} /></span><div><h3>More to share, soon.</h3><p>A selection of my personal projects will be featured here.</p></div></div>}
         </section>
 
+        <section className={styles.section} id="articles" aria-label="Articles & Publications">
+          <SectionHeading number="04" eyebrow="Research & technical writing" title="Articles & Publications" />
+          <div className={styles.publicationGrid}>
+            {publications.map(publication => (
+              <article key={publication.url} className={styles.publicationCard}>
+                <div className={styles.publicationTop}>
+                  <span className={styles.publicationBadge}>{publication.publisher}</span>
+                  <span className={styles.publicationMeta}><Clock3 size={14} strokeWidth={1.7} aria-hidden="true" />{publication.readMinutes} min read</span>
+                </div>
+                <h3>{publication.title}</h3>
+                <p>{publication.excerpt}</p>
+                <footer className={styles.publicationFooter}>
+                  <a className={styles.publicationLink} href={publication.url} target="_blank" rel="noopener noreferrer" aria-label={`${publication.linkLabel}: ${publication.title} (opens in a new tab)`}>{publication.linkLabel}<span aria-hidden="true">→</span></a>
+                </footer>
+              </article>
+            ))}
+          </div>
+        </section>
+
         <section className={styles.section} id="skills" aria-label="Skills">
-          <SectionHeading number="04" eyebrow="My engineering toolkit" title="Skills" />
+          <SectionHeading number="05" eyebrow="My engineering toolkit" title="Skills" />
           <div className={styles.skillList}>{skillGroups.map((group, i) => <div className={styles.skillRow} key={group.name}><h3><span>{String(i + 1).padStart(2, "0")}</span>{group.name}</h3><div className={styles.skillTags}>{group.items.map(skill => <span key={skill}>{skill}</span>)}</div></div>)}</div>
         </section>
 
         <section className={styles.section} id="education" aria-label="Education">
-          <SectionHeading number="05" eyebrow="The foundation" title="Education" />
+          <SectionHeading number="06" eyebrow="The foundation" title="Education" />
           <article className={styles.educationCard}><div className={styles.educationIcon}><GraduationCap size={28} strokeWidth={1.5} /></div><div className={styles.educationContent}><p className={styles.degree}>Master of Computer Science</p><h3>Illinois Institute of Technology</h3><p><MapPin size={14} />Chicago, IL, USA</p></div><div className={styles.educationMeta}><span>May 2020</span><strong>GPA <span>3.7 / 4.0</span></strong></div></article>
         </section>
 
         <section className={`${styles.section} ${styles.contactSection}`} id="contact" aria-label="Contact Me">
-          <SectionHeading number="06" eyebrow="Let’s connect" title="Contact Me" />
+          <SectionHeading number="07" eyebrow="Let’s connect" title="Contact Me" />
           <p className={styles.contactIntro}>Have an opportunity in mind, or just want to say hello?<br />I’d love to hear from you.</p>
           <div className={styles.contactList}>
             <a href={`mailto:${profile.email}`} className={styles.contactLink}><span className={styles.contactIcon}><Mail size={22} strokeWidth={1.6} /></span><span><span className={styles.contactLabel}>Email</span><span className={styles.contactValue}>{profile.email}</span></span></a>

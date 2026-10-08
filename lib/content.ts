@@ -93,3 +93,31 @@ export const projects: Project[] = [
     github: "https://github.com/adarsh-vijayakumar/DSA-Solutions",
   },
 ];
+
+export type Publication = {
+  title: string;
+  publisher: string;
+  excerpt: string;
+  readMinutes: number;
+  url: string;
+  linkLabel: string;
+};
+
+export const publications: Publication[] = [
+  {
+    title: "Spring Boot 4 and Resilience: What you need to know",
+    publisher: "Published in Spring Boot World",
+    excerpt: "Explores key resilience strategies and patterns in modern Spring Boot applications using Resilience4j. Learn how to implement fault-tolerant mechanisms like circuit breakers, rate limiters, and retries for robust microservices.",
+    readMinutes: 10,
+    url: "https://medium.com/spring-boot-world/spring-boot-4-and-resilience-533ef0ef3577",
+    linkLabel: "Read on Medium",
+  },
+  {
+    title: "Gesture Recognition for Interactive Systems Using Kinect v2",
+    publisher: "IJIRCCE · Journal Research Paper",
+    excerpt: "Explores real-time gesture recognition using Microsoft Kinect v2 sensors and depth mapping to dynamically map hand gestures to interactive system controls. Published in the International Journal of Innovative Research in Computer and Communication Engineering (IJIRCCE), detailing infrared skeleton tracking, PCA-based authorization, and natural user interface design.",
+    readMinutes: 12,
+    url: "https://ijircce.com/admin/main/storage/app/pdf/lmTe2rGj2atzpnIAlSAWXv8svf8kR7qlAwFWd7nc.pdf",
+    linkLabel: "Read Paper",
+  },
+];

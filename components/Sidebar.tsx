@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { BriefcaseBusiness, Code2, FolderCode, GraduationCap, Home, Mail, MapPin, Menu, UserRound, X } from "lucide-react";
+import { BookOpen, BriefcaseBusiness, Code2, FolderCode, GraduationCap, Home, Mail, MapPin, Menu, UserRound, X } from "lucide-react";
 import { Github, Linkedin, Medium } from "./BrandIcons";
 import ThemePicker from "./ThemePicker";
 import { profile } from "@/lib/content";
@@ -13,6 +13,7 @@ const sections = [
   { id: "about", label: "About", icon: UserRound },
   { id: "experience", label: "Professional Experience", icon: BriefcaseBusiness },
   { id: "projects", label: "Projects", icon: FolderCode },
+  { id: "articles", label: "Articles & Publications", icon: BookOpen },
   { id: "skills", label: "Skills", icon: Code2 },
   { id: "education", label: "Education", icon: GraduationCap },
   { id: "contact", label: "Contact Me", icon: Mail },
