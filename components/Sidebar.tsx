@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { BriefcaseBusiness, Code2, FolderCode, GraduationCap, Home, Mail, MapPin, Menu, UserRound, X } from "lucide-react";
 import { Github, Linkedin } from "./BrandIcons";
 import ThemePicker from "./ThemePicker";
@@ -58,7 +59,9 @@ export default function Sidebar() {
       <aside className={styles.sidebar} aria-label="Portfolio sidebar">
         <div className={styles.brandRow}>
           <a href="#home" className={styles.brand} aria-label="Adarsh Vijayakumar, home" onClick={() => setOpen(false)}>
-            <span className={styles.monogram}>AV<span>.</span></span>
+            <span className={styles.brandPortrait}>
+              {profile.photo ? <Image src={profile.photo} alt="" fill sizes="(max-width: 899px) 40px, 64px" priority className={styles.brandImage} /> : <UserRound size={28} strokeWidth={1.5} aria-hidden="true" />}
+            </span>
             <span className={styles.brandCopy}><strong>Adarsh Vijayakumar</strong><span>Software Engineer</span></span>
           </a>
           <button type="button" className={styles.menuButton} onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="section-navigation" aria-label={open ? "Close navigation" : "Open navigation"}>

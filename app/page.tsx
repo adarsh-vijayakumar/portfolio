@@ -17,9 +17,9 @@ export default function Portfolio() {
         <section className={styles.hero} id="home" aria-labelledby="home-title">
           <div className={styles.heroTop}><p className={styles.eyebrow}>Personal portfolio</p><span className={styles.location}><MapPin size={15} />{profile.location}</span></div>
           <div className={styles.portrait}>
-            {profile.photo ? <Image src={profile.photo} alt={profile.name} fill sizes="150px" priority className={styles.profileImage} /> : <UserRound size={48} strokeWidth={1} aria-label="Profile photo placeholder" />}
+            {profile.photo ? <Image src={profile.photo} alt={profile.name} fill sizes="(max-width: 599px) 148px, 176px" priority className={styles.profileImage} /> : <UserRound size={48} strokeWidth={1} aria-label="Profile photo placeholder" />}
           </div>
-          <h1 id="home-title">Adarsh<br /><span>Vijayakumar<span className={styles.nameDot}>.</span></span></h1>
+          <h1 id="home-title">{profile.name}<span className={styles.nameDot}>.</span></h1>
           <p className={styles.title}>{profile.title}</p>
           <p className={styles.heroDescription}>Building reliable systems, from the API to the interface.<br className={styles.desktopBreak} /> Five years of engineering across healthcare and retail.</p>
           <div className={styles.heroActions}><a className={styles.primaryButton} href="#experience">Explore my experience</a><a className={styles.secondaryButton} href="#contact"><Mail size={17} />Get in touch</a></div>
