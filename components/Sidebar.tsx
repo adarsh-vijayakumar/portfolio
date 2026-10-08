@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { BriefcaseBusiness, Code2, FolderCode, GraduationCap, Home, Mail, MapPin, Menu, UserRound, X } from "lucide-react";
-import { Github, Linkedin } from "./BrandIcons";
+import { Github, Linkedin, Medium } from "./BrandIcons";
 import ThemePicker from "./ThemePicker";
 import { profile } from "@/lib/content";
 import styles from "./Sidebar.module.css";
@@ -83,6 +83,7 @@ export default function Sidebar() {
             <div className={styles.socialLinks}>
               <a href={profile.linkedIn} target="_blank" rel="noopener noreferrer" aria-label="Adarsh on LinkedIn (opens in a new tab)"><Linkedin size={18} /></a>
               <a href={profile.github} target="_blank" rel="noopener noreferrer" aria-label="Adarsh on GitHub (opens in a new tab)"><Github size={18} /></a>
+              <a href={profile.medium} target="_blank" rel="noopener noreferrer" aria-label="Adarsh on Medium (opens in a new tab)"><Medium size={18} /></a>
               <a href={`mailto:${profile.email}`} aria-label="Email Adarsh"><Mail size={18} /></a>
             </div>
             <span className={styles.footerNote}>Thoughtful code. Meaningful impact.</span>

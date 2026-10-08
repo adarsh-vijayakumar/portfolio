@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Code2, ExternalLink, GraduationCap, Mail, MapPin, Phone, UserRound } from "lucide-react";
-import { Github, Linkedin } from "@/components/BrandIcons";
+import { Github, Linkedin, Medium } from "@/components/BrandIcons";
 import Sidebar from "@/components/Sidebar";
 import { experience, profile, projects, skillGroups } from "@/lib/content";
 import styles from "./page.module.css";
@@ -19,7 +19,7 @@ export default function Portfolio() {
           <div className={styles.portrait}>
             {profile.photo ? <Image src={profile.photo} alt={profile.name} fill sizes="(max-width: 599px) 148px, 176px" priority className={styles.profileImage} /> : <UserRound size={48} strokeWidth={1} aria-label="Profile photo placeholder" />}
           </div>
-          <h1 id="home-title">{profile.name}<span className={styles.nameDot}>.</span></h1>
+          <h1 id="home-title">{profile.name}</h1>
           <p className={styles.title}>{profile.title}</p>
           <p className={styles.heroDescription}>Building reliable systems, from the API to the interface.<br className={styles.desktopBreak} /> Five years of engineering across healthcare and retail.</p>
           <div className={styles.heroActions}><a className={styles.primaryButton} href="#experience">Explore my experience</a><a className={styles.secondaryButton} href="#contact"><Mail size={17} />Get in touch</a></div>
@@ -90,6 +90,7 @@ export default function Portfolio() {
             <a href={`mailto:${profile.email}`} className={styles.contactLink}><span className={styles.contactIcon}><Mail size={22} strokeWidth={1.6} /></span><span><span className={styles.contactLabel}>Email</span><span className={styles.contactValue}>{profile.email}</span></span></a>
             <a href={`tel:${profile.phone.replace(/\s/g, "")}`} className={styles.contactLink}><span className={styles.contactIcon}><Phone size={22} strokeWidth={1.6} /></span><span><span className={styles.contactLabel}>Phone</span><span className={styles.contactValue}>{profile.phone}</span></span></a>
             <a href={profile.linkedIn} target="_blank" rel="noopener noreferrer" className={styles.contactLink} aria-label="Connect with Adarsh Vijayakumar on LinkedIn (opens in a new tab)"><span className={styles.contactIcon}><Linkedin size={22} strokeWidth={1.6} /></span><span><span className={styles.contactLabel}>LinkedIn</span><span className={styles.contactValue}>Adarsh Vijayakumar</span></span><ExternalLink size={16} className={styles.externalIcon} /></a>
+            <a href={profile.medium} target="_blank" rel="noopener noreferrer" className={styles.contactLink} aria-label="Read Adarsh Vijayakumar on Medium (opens in a new tab)"><span className={styles.contactIcon}><Medium size={22} /></span><span><span className={styles.contactLabel}>Medium</span><span className={styles.contactValue}>@adarsh.vijayakumar07</span></span><ExternalLink size={16} className={styles.externalIcon} /></a>
           </div>
         </section>
         <footer className={styles.footer}><span>© {new Date().getFullYear()} {profile.name}</span><a href="#home">Back to top</a></footer>

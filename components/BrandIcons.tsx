@@ -2,6 +2,10 @@ import type { SVGProps } from "react";
 
 type IconProps = SVGProps<SVGSVGElement> & { size?: number; strokeWidth?: number };
 
+export function Medium({ size = 24, strokeWidth: _strokeWidth, ...props }: IconProps) {
+  return <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}><circle cx="6.77" cy="12" r="6.77" /><ellipse cx="17.58" cy="12" rx="3.386" ry="6.373" /><ellipse cx="22.81" cy="12" rx="1.19" ry="5.71" /></svg>;
+}
+
 export function Linkedin({ size = 24, strokeWidth: _strokeWidth, ...props }: IconProps) {
   return <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}><path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.75H4.98V9.2h2.95v9.55ZM6.46 7.9a1.71 1.71 0 1 1 0-3.42 1.71 1.71 0 0 1 0 3.42Zm12.29 10.85H15.8V14.1c0-1.11-.02-2.53-1.54-2.53-1.54 0-1.77 1.2-1.77 2.45v4.73H9.54V9.2h2.83v1.3h.04c.39-.74 1.36-1.53 2.79-1.53 2.98 0 3.55 1.96 3.55 4.5v5.28Z" /></svg>;
 }

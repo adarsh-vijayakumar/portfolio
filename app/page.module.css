@@ -6,7 +6,6 @@
 .portrait { position: relative; overflow: hidden; display: grid; place-items: center; height: 176px; width: 176px; border-radius: 50%; background: var(--surface-soft); border: 1px solid var(--line); outline: 6px solid var(--sidebar-surface); color: var(--text-faint); margin-bottom: 30px; }
 .profileImage { border-radius: 50%; object-fit: cover; transform: scale(1.6); transform-origin: 50% 35%; }
 .hero h1 { font-size: clamp(1.375rem, 7.5cqi, 4rem); font-weight: 750; line-height: 1.12; letter-spacing: -.045em; white-space: nowrap; }
-.nameDot { color: var(--accent); }
 .title { font-size: clamp(17px, 1.6vw, 22px); color: var(--accent); font-weight: 600; margin-top: 22px; letter-spacing: -.5px; }
 .heroDescription { margin-top: 20px; max-width: 590px; color: var(--muted); font-size: 16px; line-height: 1.85; }
 .heroActions { display: flex; align-items: center; gap: 14px; margin-top: 30px; flex-wrap: wrap; }

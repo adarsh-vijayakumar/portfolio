@@ -6,6 +6,7 @@ export const profile = {
   phone: "+91 9187051037",
   linkedIn: "https://www.linkedin.com/in/adarsh-vijayakumar-sde/",
   github: "https://github.com/adarsh-vijayakumar",
+  medium: "https://medium.com/@adarsh.vijayakumar07",
   // Add the image to public/ and set this to its URL, e.g. "/profile.jpg".
   photo: "/profile.png" as string | null,
   summary: "Software Engineer with 5 years of US-based experience designing and building high-throughput microservices and event-driven systems across healthcare and retail domains. Proficient in Java, Spring Boot, Kafka, and AWS, with a strong focus on end-to-end API design, scalable data processing, and cloud deployment. Proven track record of engineering mission-critical platforms processing $180M+ in annual financial transactions across 70k+ active caseloads.",
@@ -16,7 +17,7 @@ export const experience = [
     company: "UnitedHealth Group",
     role: "Software Engineer",
     location: "Chicago, IL",
-    period: "March 2022 – August 2025",
+    period: "March 2022 – Present",
     domain: "Healthcare",
     technologies: ["Java", "Spring Boot", "Kafka", "Angular", "AWS"],
     highlights: [
