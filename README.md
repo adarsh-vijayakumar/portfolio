@@ -23,9 +23,13 @@ The production build is statically exported to `out/`, suitable for static hosti
 ## Update content
 
 - `lib/content.ts` contains the profile, contact links, experience, skills, and typed project entries.
-- Add your portrait to `public/profile.jpg`, then set `profile.photo` to `"/profile.jpg"`. The circular placeholder is replaced automatically.
+- Your supplied portrait is in `public/profile.png` and is set in `profile.photo`. Replace that file to update your photo. Its circular crop is styled in `app/page.module.css`.
 - Add verified project entries to `projects`; cards with optional GitHub and live links render automatically.
 - `app/page.tsx` contains the page sections, including education.
 - `app/page.module.css` and `components/Sidebar.module.css` control the visual design. Shared colors and spacing tokens are in `app/globals.css`.
 
 Navigation uses section anchors, smooth scrolling, and an active section indicator. On smaller screens, it becomes a collapsible fixed top navigation. Contact links use `mailto:`, `tel:`, and the LinkedIn URL from the resume. Reduced motion, keyboard focus, a skip link, and screen reader labels are included.
+
+## Themes
+
+Hover over **Theme** beneath Contact Me to reveal Light and Dark. Click or press Enter on Theme when using touch or a keyboard. Light is the default for new visitors. The chosen theme is saved in that browser and restored on reload. Dark uses charcoal surfaces with a subtle white glow at the edges. Theme colors are defined in `app/globals.css`; the picker is in `components/ThemePicker.tsx`.

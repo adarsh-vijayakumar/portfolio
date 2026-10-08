@@ -6,16 +6,59 @@
   --accent-soft: #eef5f1;
   --line: #e6ebe8;
   --sidebar-width: 270px;
+  color-scheme: light;
+  --surface: #ffffff;
+  --sidebar-surface: #fafcfb;
+  --surface-soft: #f5f7f6;
+  --surface-subtle: #fcfdfc;
+  --heading-secondary: #333e38;
+  --text-faint: #91a398;
+  --nav-hover: #edf2ef;
+  --nav-active: #e9f2ec;
+  --hover-border: #bfdbcb;
+  --placeholder-line: #d7e0da;
+  --accent-hover: #11543e;
+  --on-accent: #ffffff;
+  --button-shadow: #17694f20;
+  --card-shadow: #233b2c06;
+  --edge-glow: none;
+  --sidebar-shadow: none;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #202326;
+  --foreground: #e8eeea;
+  --muted: #afb9b4;
+  --accent: #8edab3;
+  --accent-soft: #2b3932;
+  --line: #3c4541;
+  --surface: #282d2c;
+  --sidebar-surface: #252a29;
+  --surface-soft: #303734;
+  --surface-subtle: #262b2a;
+  --heading-secondary: #dbe4de;
+  --text-faint: #a1b0a6;
+  --nav-hover: #303a35;
+  --nav-active: #32463a;
+  --hover-border: #5b7867;
+  --placeholder-line: #4c5a52;
+  --accent-hover: #ace8c7;
+  --on-accent: #173025;
+  --button-shadow: #00000026;
+  --card-shadow: #00000020;
+  --edge-glow: radial-gradient(ellipse 280px 85vh at 0% 45%, rgb(255 255 255 / 7%), transparent 80%), radial-gradient(ellipse 340px 90vh at 100% 55%, rgb(255 255 255 / 6%), transparent 80%);
+  --sidebar-shadow: inset -1px 0 24px rgb(255 255 255 / 3%);
 }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 32px; }
-body { margin: 0; background: var(--background); color: var(--foreground); font-family: "Manrope Variable", Arial, sans-serif; font-size: 16px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+body { margin: 0; background-color: var(--background); background-image: var(--edge-glow); background-attachment: fixed; color: var(--foreground); font-family: "Manrope Variable", Arial, sans-serif; font-size: 16px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
 button { cursor: pointer; }
-::selection { background: #d8e9e0; }
+::selection { background: var(--nav-active); color: var(--foreground); }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
 h1, h2, h3, p { margin: 0; }
 svg { flex-shrink: 0; }

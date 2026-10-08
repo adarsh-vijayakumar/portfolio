@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { BriefcaseBusiness, Code2, FolderCode, GraduationCap, Home, Mail, MapPin, Menu, UserRound, X } from "lucide-react";
 import { Github, Linkedin } from "./BrandIcons";
+import ThemePicker from "./ThemePicker";
 import { profile } from "@/lib/content";
 import styles from "./Sidebar.module.css";
 
@@ -72,6 +73,7 @@ export default function Sidebar() {
                 <Icon size={18} strokeWidth={1.7} /><span>{label}</span>
               </a>
             ))}
+            <ThemePicker />
           </nav>
           <div className={styles.sidebarFooter}>
             <p><MapPin size={15} strokeWidth={1.7} />{profile.location}</p>
