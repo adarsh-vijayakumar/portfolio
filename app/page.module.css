@@ -7,7 +7,7 @@
 .profileImage { border-radius: 50%; object-fit: cover; transform: scale(1.6); transform-origin: 50% 35%; }
 .hero h1 { font-size: clamp(1.375rem, 7.5cqi, 4rem); font-weight: 750; line-height: 1.12; letter-spacing: -.045em; white-space: nowrap; }
 .title { font-size: clamp(17px, 1.6vw, 22px); color: var(--accent); font-weight: 600; margin-top: 22px; letter-spacing: -.5px; }
-.heroDescription { margin-top: 20px; max-width: 590px; color: var(--muted); font-size: 16px; line-height: 1.85; }
+.heroDescription { margin-top: 20px; max-width: 100%; color: var(--muted); font-size: 16px; line-height: 1.85; }
 .heroActions { display: flex; align-items: center; gap: 14px; margin-top: 30px; flex-wrap: wrap; }
 .primaryButton, .secondaryButton { display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 11px 21px; border-radius: 6px; border: 1px solid var(--accent); font-size: 14px; font-weight: 650; transition: background 180ms, border-color 180ms, box-shadow 180ms; }
 .primaryButton { background: var(--accent); color: var(--on-accent); }
@@ -81,6 +81,7 @@
 .skillTags { display: flex; flex-wrap: wrap; gap: 8px; }
 .skillTags > span { padding: 5px 12px; border: 1px solid var(--line); border-radius: 5px; font-size: 13px; color: var(--muted); background: var(--surface-subtle); transition: color 180ms, background 180ms, border-color 180ms; }
 .skillTags > span:hover { color: var(--accent); border-color: var(--hover-border); background: var(--accent-soft); }
+.educationList { display: grid; gap: 20px; }
 .educationCard { display: flex; align-items: center; gap: 22px; padding: 30px; border: 1px solid var(--line); border-radius: 8px; }
 .educationIcon { display: grid; place-items: center; background: var(--accent-soft); color: var(--accent); width: 65px; height: 65px; border-radius: 8px; flex-shrink: 0; }
 .educationContent { flex: 1; }

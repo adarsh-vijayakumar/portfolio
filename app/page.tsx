@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Clock3, Code2, ExternalLink, GraduationCap, Mail, MapPin, Phone, UserRound } from "lucide-react";
 import { Github, Linkedin, Medium } from "@/components/BrandIcons";
 import Sidebar from "@/components/Sidebar";
-import { experience, profile, projects, publications, skillGroups } from "@/lib/content";
+import { education, experience, profile, projects, publications, skillGroups } from "@/lib/content";
 import styles from "./page.module.css";
 
 function SectionHeading({ number, eyebrow, title }: { number: string; eyebrow: string; title: string }) {
@@ -99,7 +99,15 @@ export default function Portfolio() {
 
         <section className={styles.section} id="education" aria-label="Education">
           <SectionHeading number="06" eyebrow="The foundation" title="Education" />
-          <article className={styles.educationCard}><div className={styles.educationIcon}><GraduationCap size={28} strokeWidth={1.5} /></div><div className={styles.educationContent}><p className={styles.degree}>Master of Computer Science</p><h3>Illinois Institute of Technology</h3><p><MapPin size={14} />Chicago, IL, USA</p></div><div className={styles.educationMeta}><span>May 2020</span><strong>GPA <span>3.7 / 4.0</span></strong></div></article>
+          <div className={styles.educationList}>
+            {education.map(item => (
+              <article key={item.university} className={styles.educationCard}>
+                <div className={styles.educationIcon}><GraduationCap size={28} strokeWidth={1.5} aria-hidden="true" /></div>
+                <div className={styles.educationContent}><p className={styles.degree}>{item.qualification}</p><h3>{item.university}</h3><p><MapPin size={14} aria-hidden="true" />{item.location}</p></div>
+                <div className={styles.educationMeta}><span>{item.graduationDate}</span>{item.gpa && <strong>GPA <span>{item.gpa}</span></strong>}</div>
+              </article>
+            ))}
+          </div>
         </section>
 
         <section className={`${styles.section} ${styles.contactSection}`} id="contact" aria-label="Contact Me">

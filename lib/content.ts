@@ -65,6 +65,30 @@ export const skillGroups = [
   { name: "Testing & tools", items: ["JUnit", "Mockito", "Cucumber", "Kafka", "Maven", "Git"] },
 ];
 
+export type Education = {
+  university: string;
+  location: string;
+  qualification: string;
+  graduationDate: string;
+  gpa?: string;
+};
+
+export const education: Education[] = [
+  {
+    university: "Illinois Institute of Technology",
+    location: "Chicago, IL, USA",
+    qualification: "Master of Computer Science",
+    graduationDate: "May 2020",
+    gpa: "3.7 / 4.0",
+  },
+  {
+    university: "Visvesvaraya Technological University",
+    location: "Mysore, KA",
+    qualification: "Bachelor of Engineering in Computer Science",
+    graduationDate: "June 2016",
+  },
+];
+
 export type Project = {
   title: string;
   description: string;
