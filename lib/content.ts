@@ -67,10 +67,28 @@ export const skillGroups = [
 export type Project = {
   title: string;
   description: string;
+  highlights?: { label: string; text: string }[];
   technologies: string[];
   github?: string;
   url?: string;
 };
 
-// Add verified personal projects here when their details are available.
-export const projects: Project[] = [];
+export const projects: Project[] = [
+  {
+    title: "Java Multithreading & Concurrency",
+    description: "A personal platform exploring core Java concurrency through standalone console examples. Demonstrates thread lifecycle, shared mutable state, thread pools, and producer-consumer coordination, with intentionally unsafe examples that make race conditions and deadlocks observable alongside coordinated implementations.",
+    technologies: [],
+    github: "https://github.com/adarsh-vijayakumar/Multithreading",
+  },
+  {
+    title: "Data Structures & Algorithms Repository",
+    description: "A comprehensive, growing personal archive tracking my technical problem-solving journey.",
+    highlights: [
+      { label: "Broad Coverage", text: "Solutions spanning arrays, linked lists, trees, graphs, dynamic programming, and core algorithms." },
+      { label: "Code Quality", text: "Written with an emphasis on optimal asymptotic complexity and clean syntax." },
+      { label: "Active Commitment", text: "Continuously updated with new solutions as I solve problems across various platforms." },
+    ],
+    technologies: [],
+    github: "https://github.com/adarsh-vijayakumar/DSA-Solutions",
+  },
+];

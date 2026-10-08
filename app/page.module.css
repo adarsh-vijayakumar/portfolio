@@ -50,11 +50,17 @@
 .projectPlaceholder h3 { font-size: 18px; font-weight: 650; letter-spacing: -.35px; }
 .projectPlaceholder p { margin-top: 5px; color: var(--muted); font-size: 14px; }
 .projectGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
-.projectCard { border: 1px solid var(--line); border-radius: 8px; padding: 28px; }
+.projectCard { display: flex; flex-direction: column; min-width: 0; border: 1px solid var(--line); border-radius: 8px; padding: 28px; background: var(--surface); transition: border-color 180ms, box-shadow 180ms; }
+.projectCard:hover { border-color: var(--hover-border); box-shadow: 0 5px 24px var(--card-shadow); }
 .projectCard > svg { color: var(--accent); }
-.projectCard h3 { margin: 14px 0; font-size: 20px; }
-.projectCard p { color: var(--muted); margin-bottom: 18px; }
-.projectLinks { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 20px; }
+.projectCard h3 { margin: 14px 0; font-size: 20px; line-height: 1.45; letter-spacing: -.4px; }
+.projectDescription { padding-bottom: 26px; color: var(--muted); }
+.projectDescription p { color: var(--muted); }
+.projectHighlights { padding-left: 19px; margin: 18px 0 0; }
+.projectHighlights li { margin-top: 12px; padding-left: 3px; }
+.projectHighlights li::marker { color: var(--accent); }
+.projectHighlights strong { font-weight: 650; color: var(--foreground); }
+.projectLinks { display: flex; flex-wrap: wrap; gap: 18px; margin-top: auto; padding-top: 19px; border-top: 1px solid var(--line); }
 .projectLinks a { display: flex; align-items: center; gap: 7px; font-size: 14px; color: var(--accent); }
 .projectLinks a:hover { text-decoration: underline; }
 .skillRow { display: grid; grid-template-columns: 235px 1fr; gap: 28px; padding: 24px 0; border-bottom: 1px solid var(--line); }

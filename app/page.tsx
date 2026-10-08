@@ -52,7 +52,25 @@ export default function Portfolio() {
 
         <section className={styles.section} id="projects" aria-label="Projects">
           <SectionHeading number="03" eyebrow="Things I’ve built" title="Projects" />
-          {projects.length ? <div className={styles.projectGrid}>{projects.map(project => <article key={project.title} className={styles.projectCard}><Code2 size={24} /><h3>{project.title}</h3><p>{project.description}</p><div className={styles.techTags}>{project.technologies.map(tech => <span key={tech}>{tech}</span>)}</div><div className={styles.projectLinks}>{project.github && <a href={project.github} target="_blank" rel="noopener noreferrer"><Github size={16} />Source code</a>}{project.url && <a href={project.url} target="_blank" rel="noopener noreferrer"><ExternalLink size={16} />Live project</a>}</div></article>)}</div> : <div className={styles.projectPlaceholder}><span className={styles.placeholderIcon}><Code2 size={26} strokeWidth={1.4} /></span><div><h3>More to share, soon.</h3><p>A selection of my personal projects will be featured here.</p></div></div>}
+          {projects.length ? (
+            <div className={styles.projectGrid}>
+              {projects.map(project => (
+                <article key={project.title} className={styles.projectCard}>
+                  <Code2 size={24} aria-hidden="true" />
+                  <h3>{project.title}</h3>
+                  <div className={styles.projectDescription}>
+                    <p>{project.description}</p>
+                    {project.highlights?.length ? <ul className={styles.projectHighlights}>{project.highlights.map(item => <li key={item.label}><strong>{item.label}:</strong> {item.text}</li>)}</ul> : null}
+                    {project.technologies.length ? <div className={styles.techTags}>{project.technologies.map(tech => <span key={tech}>{tech}</span>)}</div> : null}
+                  </div>
+                  <footer className={styles.projectLinks}>
+                    {project.github && <a href={project.github} target="_blank" rel="noopener noreferrer" aria-label={`${project.title} on GitHub (opens in a new tab)`}><Github size={17} />View on GitHub</a>}
+                    {project.url && <a href={project.url} target="_blank" rel="noopener noreferrer"><ExternalLink size={16} />Live project</a>}
+                  </footer>
+                </article>
+              ))}
+            </div>
+          ) : <div className={styles.projectPlaceholder}><span className={styles.placeholderIcon}><Code2 size={26} strokeWidth={1.4} /></span><div><h3>More to share, soon.</h3><p>A selection of my personal projects will be featured here.</p></div></div>}
         </section>
 
         <section className={styles.section} id="skills" aria-label="Skills">
