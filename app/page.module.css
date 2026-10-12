@@ -69,7 +69,9 @@
 .publicationBadge { max-width: 100%; padding: 5px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 700; line-height: 1.5; }
 .publicationMeta { display: inline-flex; align-items: center; gap: 5px; padding-top: 5px; color: var(--muted); font-size: 12px; line-height: 1.5; white-space: nowrap; }
 .publicationCard h3 { margin: 16px 0 12px; color: var(--foreground); font-size: 20px; font-weight: 750; line-height: 1.45; letter-spacing: -.4px; }
-.publicationCard > p { color: var(--muted); font-size: 16px; line-height: 1.8; }
+.publicationSubtitle { margin: 0 0 18px; color: var(--muted); font-size: 14px; font-style: italic; line-height: 1.7; }
+.publicationExcerpt { color: var(--muted); font-size: 16px; line-height: 1.8; }
+.publicationExcerpt p + p { margin-top: 18px; }
 .publicationFooter { display: flex; justify-content: flex-end; margin-top: auto; padding-top: 24px; }
 .publicationLink { display: inline-flex; align-items: center; gap: 8px; padding: 7px 13px; border: 1px solid var(--line); border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: 13px; font-weight: 650; line-height: 1.5; transition: background 180ms ease, border-color 180ms ease; }
 .publicationLink:hover { background: var(--nav-active); border-color: var(--hover-border); }

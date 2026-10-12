@@ -1,6 +1,6 @@
 export const profile = {
   name: "Adarsh Vijayakumar",
-  title: "Java Full Stack Software Engineer",
+  title: "Java Software Engineer",
   location: "Bengaluru, India",
   email: "adarsh.vijayakumar07@gmail.com",
   phone: "+91 9187051037",
@@ -120,8 +120,9 @@ export const projects: Project[] = [
 
 export type Publication = {
   title: string;
+  subtitle?: string;
   publisher: string;
-  excerpt: string;
+  excerpt: string | string[];
   readMinutes: number;
   url: string;
   linkLabel: string;
@@ -129,11 +130,15 @@ export type Publication = {
 
 export const publications: Publication[] = [
   {
-    title: "Spring Boot 4 and Resilience: What you need to know",
+    title: "Why Does Your Java Code Break When You Add Another Thread?",
+    subtitle: "From shared-state races to thread pools: a practical walkthrough with a runnable Java project.",
     publisher: "Published in Spring Boot World",
-    excerpt: "Explores key resilience strategies and patterns in modern Spring Boot applications using Resilience4j. Learn how to implement fault-tolerant mechanisms like circuit breakers, rate limiters, and retries for robust microservices.",
+    excerpt: [
+      "Why does Java code often fail, produce corrupted states, or deadlock the moment multiple threads enter the picture? This article explores the hidden pitfalls of concurrent programming in Java, breaking down how memory visibility, race conditions, and improper synchronization destroy thread safety.",
+      "Designed for backend developers, it demystifies core concurrency concepts using practical examples, explains why standard primitives can break down under heavy workloads, and bridges the gap toward modern asynchronous techniques like CompletableFuture and @Async for building scalable, high-performance applications.",
+    ],
     readMinutes: 10,
-    url: "https://medium.com/spring-boot-world/spring-boot-4-and-resilience-533ef0ef3577",
+    url: "https://medium.com/spring-boot-world/why-does-your-java-code-break-when-you-add-another-thread-962da621b67f",
     linkLabel: "Read on Medium",
   },
   {

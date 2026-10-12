@@ -83,7 +83,10 @@ export default function Portfolio() {
                   <span className={styles.publicationMeta}><Clock3 size={14} strokeWidth={1.7} aria-hidden="true" />{publication.readMinutes} min read</span>
                 </div>
                 <h3>{publication.title}</h3>
-                <p>{publication.excerpt}</p>
+                {publication.subtitle && <p className={styles.publicationSubtitle}>{publication.subtitle}</p>}
+                <div className={styles.publicationExcerpt}>
+                  {(Array.isArray(publication.excerpt) ? publication.excerpt : [publication.excerpt]).map(paragraph => <p key={paragraph}>{paragraph}</p>)}
+                </div>
                 <footer className={styles.publicationFooter}>
                   <a className={styles.publicationLink} href={publication.url} target="_blank" rel="noopener noreferrer" aria-label={`${publication.linkLabel}: ${publication.title} (opens in a new tab)`}>{publication.linkLabel}<span aria-hidden="true">→</span></a>
                 </footer>
