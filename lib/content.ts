@@ -123,6 +123,10 @@ export type Publication = {
   subtitle?: string;
   publisher: string;
   excerpt: string | string[];
+  excerptList?: {
+    intro: string;
+    items: { label: string; text: string }[];
+  };
   readMinutes: number;
   url: string;
   linkLabel: string;
@@ -139,6 +143,27 @@ export const publications: Publication[] = [
     ],
     readMinutes: 10,
     url: "https://medium.com/spring-boot-world/why-does-your-java-code-break-when-you-add-another-thread-962da621b67f",
+    linkLabel: "Read on Medium",
+  },
+  {
+    title: "Threads are the engine. CompletableFuture and @Async are the steering wheel 🏎️.",
+    subtitle: "Java Multithreading, Part II: Connect tasks with CompletableFuture and Spring’s @Async — and avoid the blocking trap.",
+    publisher: "Published in Spring Boot World",
+    excerpt: [
+      "Part II of the series. In modern Java you rarely need new Thread() and scattered join() calls. This article shows how to chain dependent steps into clean pipelines, combine independent tasks to run in parallel, and catch every failure before it silently disappears. 🎯",
+      "Written for backend developers who want async code that is fast, readable, and safe to ship. 🚀",
+    ],
+    excerptList: {
+      intro: "What you’ll walk away with:",
+      items: [
+        { label: "⚡ CompletableFuture in practice", text: "runAsync, supplyAsync, thenCompose, thenCombine, allOf, and anyOf, with a cheat sheet for choosing between them" },
+        { label: "🌱 Spring’s @Async", text: "the one-annotation shortcut, plus the hidden executor trap behind it" },
+        { label: "👇 Production pitfalls with copy-paste fixes", text: "vanishing tasks, the JVM that never exits, the complete() myth, and the self-call that bypasses Spring’s proxy" },
+        { label: "▶️ Runnable code", text: "every example is in my GitHub repo, so you can clone it, run it, and break it" },
+      ],
+    },
+    readMinutes: 10,
+    url: "https://medium.com/spring-boot-world/threads-are-the-engine-completablefuture-and-async-are-the-steering-wheel-%EF%B8%8F-d36e0fa18c75",
     linkLabel: "Read on Medium",
   },
   {

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Fragment } from "react";
 import { Clock3, Code2, ExternalLink, GraduationCap, Mail, MapPin, Phone, UserRound } from "lucide-react";
 import { Github, Linkedin, Medium } from "@/components/BrandIcons";
 import Sidebar from "@/components/Sidebar";
@@ -85,7 +86,19 @@ export default function Portfolio() {
                 <h3>{publication.title}</h3>
                 {publication.subtitle && <p className={styles.publicationSubtitle}>{publication.subtitle}</p>}
                 <div className={styles.publicationExcerpt}>
-                  {(Array.isArray(publication.excerpt) ? publication.excerpt : [publication.excerpt]).map(paragraph => <p key={paragraph}>{paragraph}</p>)}
+                  {(Array.isArray(publication.excerpt) ? publication.excerpt : [publication.excerpt]).map((paragraph, index) => (
+                    <Fragment key={paragraph}>
+                      <p>{paragraph}</p>
+                      {index === 0 && publication.excerptList && (
+                        <>
+                          <p>{publication.excerptList.intro}</p>
+                          <ul className={styles.publicationHighlights}>
+                            {publication.excerptList.items.map(item => <li key={item.label}><strong>{item.label}:</strong> {item.text}</li>)}
+                          </ul>
+                        </>
+                      )}
+                    </Fragment>
+                  ))}
                 </div>
                 <footer className={styles.publicationFooter}>
                   <a className={styles.publicationLink} href={publication.url} target="_blank" rel="noopener noreferrer" aria-label={`${publication.linkLabel}: ${publication.title} (opens in a new tab)`}>{publication.linkLabel}<span aria-hidden="true">→</span></a>

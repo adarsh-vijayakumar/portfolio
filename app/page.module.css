@@ -72,6 +72,9 @@
 .publicationSubtitle { margin: 0 0 18px; color: var(--muted); font-size: 14px; font-style: italic; line-height: 1.7; }
 .publicationExcerpt { color: var(--muted); font-size: 16px; line-height: 1.8; }
 .publicationExcerpt p + p { margin-top: 18px; }
+.publicationHighlights { margin: 12px 0 18px; padding-left: 20px; }
+.publicationHighlights li + li { margin-top: 10px; }
+.publicationHighlights strong { color: var(--foreground); font-weight: 650; }
 .publicationFooter { display: flex; justify-content: flex-end; margin-top: auto; padding-top: 24px; }
 .publicationLink { display: inline-flex; align-items: center; gap: 8px; padding: 7px 13px; border: 1px solid var(--line); border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: 13px; font-weight: 650; line-height: 1.5; transition: background 180ms ease, border-color 180ms ease; }
 .publicationLink:hover { background: var(--nav-active); border-color: var(--hover-border); }
